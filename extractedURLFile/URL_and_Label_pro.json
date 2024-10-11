@@ -1,0 +1,226 @@
+{
+  "pageURL": "https://4bestbenew.newsoftdemo.info/",
+  "URLcounts": "Total number of hrefs: 52",
+  "anchorData": [
+    {
+      "href": "https://4bestbenew.newsoftdemo.info/",
+      "label": ""
+    },
+    {
+      "href": "https://4bestbenew.newsoftdemo.info/over-ons/",
+      "label": "Over Ons"
+    },
+    {
+      "href": "#",
+      "label": "Wat doen wij",
+      "fullHTML": "<a href=\"#\" data-ps2id-api=\"true\" class=\"__mPS2id\">Wat doen wij</a>",
+      "parentHTML": "<li id=\"menu-item-3621\" class=\"menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-3621 has-sub\"><span class=\"submenu-button\"></span><a href=\"#\" data-ps2id-api=\"true\" class=\"__mPS2id\">Wat doen wij</a>\n<ul class=\"sub-menu\" style=\"display: none;\">\n\t<li id=\"menu-item-3622\" class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-3622\"><a href=\"https://4bestbenew.newsoftdemo.info/afbraakwerken/\" data-ps2id-api=\"true\">Afbraakwerken</a></li>\n\t<li id=\"menu-item-3669\" class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-3669\"><a href=\"https://4bestbenew.newsoftdemo.info/grondwerken/\" data-ps2id-api=\"true\">Grondwerken</a></li>\n\t<li id=\"menu-item-3668\" class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-3668\"><a href=\"https://4bestbenew.newsoftdemo.info/containerdiensten/\" data-ps2id-api=\"true\">Containerdiensten</a></li>\n\t<li id=\"menu-item-3666\" class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-3666\"><a href=\"https://4bestbenew.newsoftdemo.info/bodemsanering/\" data-ps2id-api=\"true\">Bodemsanering</a></li>\n\t<li id=\"menu-item-3667\" class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-3667\"><a href=\"https://4bestbenew.newsoftdemo.info/rioleringswerken/\" data-ps2id-api=\"true\">Rioleringswerken</a></li>\n\t<li id=\"menu-item-3794\" class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-3794\"><a href=\"https://4bestbenew.newsoftdemo.info/chroom-6/\" data-ps2id-api=\"true\">Chroom-6</a></li>\n\t<li id=\"menu-item-3719\" class=\"activeClass menu-item menu-item-type-custom menu-item-object-custom menu-item-3719\"><a title=\"activeClass\" target=\"_blank\" rel=\"noopener\" href=\"https://4bestbe.newsoftdemo.info/\" data-ps2id-api=\"true\">Asbestverwijdering</a></li>\n</ul>\n</li>"
+    },
+    {
+      "href": "https://4bestbenew.newsoftdemo.info/afbraakwerken/",
+      "label": "Afbraakwerken"
+    },
+    {
+      "href": "https://4bestbenew.newsoftdemo.info/grondwerken/",
+      "label": "Grondwerken"
+    },
+    {
+      "href": "https://4bestbenew.newsoftdemo.info/containerdiensten/",
+      "label": "Containerdiensten"
+    },
+    {
+      "href": "https://4bestbenew.newsoftdemo.info/bodemsanering/",
+      "label": "Bodemsanering"
+    },
+    {
+      "href": "https://4bestbenew.newsoftdemo.info/rioleringswerken/",
+      "label": "Rioleringswerken"
+    },
+    {
+      "href": "https://4bestbenew.newsoftdemo.info/chroom-6/",
+      "label": "Chroom-6"
+    },
+    {
+      "href": "https://4bestbe.newsoftdemo.info/",
+      "label": "Asbestverwijdering"
+    },
+    {
+      "href": "https://4bestbenew.newsoftdemo.info/referenties/",
+      "label": "Referenties"
+    },
+    {
+      "href": "https://4bestbenew.newsoftdemo.info/vacatures/",
+      "label": "Vacatures"
+    },
+    {
+      "href": "https://4bestbenew.newsoftdemo.info/nieuws/",
+      "label": "Nieuws"
+    },
+    {
+      "href": "https://4bestbenew.newsoftdemo.info/offerte-aanvragen/",
+      "label": "Vraag een offerte"
+    },
+    {
+      "href": "#",
+      "label": "",
+      "fullHTML": "<a href=\"#\" class=\"js-wpml-ls-item-toggle wpml-ls-item-toggle\">\n                                                    <img class=\"wpml-ls-flag\" src=\"https://4bestbenew.newsoftdemo.info/wp-content/plugins/sitepress-multilingual-cms/res/flags/nl.png\" alt=\"Nederlands\" width=\"18\" height=\"12\"></a>",
+      "parentHTML": "<li tabindex=\"0\" class=\"wpml-ls-slot-shortcode_actions wpml-ls-item wpml-ls-item-nl wpml-ls-current-language wpml-ls-first-item wpml-ls-item-legacy-dropdown\">\n\t\t\t<a href=\"#\" class=\"js-wpml-ls-item-toggle wpml-ls-item-toggle\">\n                                                    <img class=\"wpml-ls-flag\" src=\"https://4bestbenew.newsoftdemo.info/wp-content/plugins/sitepress-multilingual-cms/res/flags/nl.png\" alt=\"Nederlands\" width=\"18\" height=\"12\"></a>\n\n\t\t\t<ul class=\"wpml-ls-sub-menu\">\n\t\t\t\t\n\t\t\t\t\t<li class=\"wpml-ls-slot-shortcode_actions wpml-ls-item wpml-ls-item-fr wpml-ls-last-item\">\n\t\t\t\t\t\t<a href=\"https://4bestbenew.newsoftdemo.info/fr/\" class=\"wpml-ls-link\">\n                                                                <img class=\"wpml-ls-flag\" src=\"https://4bestbenew.newsoftdemo.info/wp-content/plugins/sitepress-multilingual-cms/res/flags/fr.png\" alt=\"Frans\" width=\"18\" height=\"12\"></a>\n\t\t\t\t\t</li>\n\n\t\t\t\t\t\t\t</ul>\n\n\t\t</li>"
+    },
+    {
+      "href": "https://4bestbenew.newsoftdemo.info/fr/",
+      "label": ""
+    },
+    {
+      "href": "https://4bestbenew.newsoftdemo.info/offerte-aanvragen/",
+      "label": "Vraag snel een scherpe offerte aan"
+    },
+    {
+      "href": "tel:32%20476%2051%2097%2087",
+      "label": "Bel Ons"
+    },
+    {
+      "href": "https://4bestbenew.newsoftdemo.info/over-ons/",
+      "label": "Meer weten"
+    },
+    {
+      "href": "https://4bestbenew.newsoftdemo.info/afbraakwerken-2/",
+      "label": "Meer weten"
+    },
+    {
+      "href": "https://4bestbenew.newsoftdemo.info/grondwerken/",
+      "label": "Meer weten"
+    },
+    {
+      "href": "https://4bestbenew.newsoftdemo.info/containerdiensten/",
+      "label": "Meer weten"
+    },
+    {
+      "href": "https://4bestbenew.newsoftdemo.info/bodemsanering/",
+      "label": "Meer weten"
+    },
+    {
+      "href": "https://4bestbenew.newsoftdemo.info/rioleringswerken/",
+      "label": "Meer weten"
+    },
+    {
+      "href": "https://4bestbe.newsoftdemo.info/",
+      "label": "Meer Weten"
+    },
+    {
+      "href": "#",
+      "label": "Offerte aanvragen",
+      "fullHTML": "<a class=\"link\" href=\"#\" target=\"_self\">Offerte aanvragen</a>",
+      "parentHTML": "<div class=\"quote_content  text-center\">\n\t\t\t<h3>Vraag hier vrijblijvend je offerte aan.</h3>\n\t\t\t<p>Laat je gegevens achter en wij nemen contact met je op.</p>\n\t\t\t\t\t\t\t\t<a class=\"link\" href=\"#\" target=\"_self\">Offerte aanvragen</a>\n\t\t\t\t\t\t</div>"
+    },
+    {
+      "href": "https://4bestbenew.newsoftdemo.info/referenties/buitenverharding-in-3-stappen/",
+      "label": "Buitenverharding in 3 stappen:"
+    },
+    {
+      "href": "https://4bestbenew.newsoftdemo.info/referenties/4best-hermetisch-afsluiter-van-het-jaar/",
+      "label": "4Best Hermetisch Afsluiter van het jaar!!"
+    },
+    {
+      "href": "https://4bestbenew.newsoftdemo.info/referenties/speelgoedfabriek-klaar-voor-herbestemming-dankzij-4best/",
+      "label": "Speelgoedfabriek klaar voor herbestemming dankzij 4Best!"
+    },
+    {
+      "href": "https://www.google.com/maps/contrib/113039635665049249416/reviews",
+      "label": "Jannick Dupulthys"
+    },
+    {
+      "href": "https://www.google.com/maps/contrib/113713398415583054076/reviews",
+      "label": "Patrick Schoovaerts"
+    },
+    {
+      "href": "https://www.google.com/maps/contrib/112248873255163486789/reviews",
+      "label": "Linda Vranken"
+    },
+    {
+      "href": "https://www.google.com/maps/contrib/104289264939481885651/reviews",
+      "label": "cindy dc"
+    },
+    {
+      "href": "https://www.google.com/maps/contrib/111525563408980275906/reviews",
+      "label": "Stef Kinet"
+    },
+    {
+      "href": "https://www.google.com/maps/contrib/101738616565016547176/reviews",
+      "label": "Jef Bluys"
+    },
+    {
+      "href": "https://4bestbenew.newsoftdemo.info/offerte-aanvragen/",
+      "label": "Plan een afspraak"
+    },
+    {
+      "href": "tel:+3238460297",
+      "label": "+32 3 846 02 97"
+    },
+    {
+      "href": "mailto:info@4best.be",
+      "label": "info@4best.be"
+    },
+    {
+      "href": "https://www.facebook.com/4Bestbv",
+      "label": ""
+    },
+    {
+      "href": "https://www.instagram.com/4best_bv",
+      "label": ""
+    },
+    {
+      "href": "https://www.linkedin.com/company/4bestbv/",
+      "label": ""
+    },
+    {
+      "href": "https://4bestbenew.newsoftdemo.info/afbraakwerken/",
+      "label": "Afbraakwerken"
+    },
+    {
+      "href": "https://4bestbenew.newsoftdemo.info/grondwerken/",
+      "label": "Grondwerken"
+    },
+    {
+      "href": "#",
+      "label": "Omgevingswerken",
+      "fullHTML": "<a href=\"#\" data-ps2id-api=\"true\" class=\"__mPS2id\">Omgevingswerken</a>",
+      "parentHTML": "<li id=\"menu-item-3674\" class=\"menu-item menu-item-type-custom menu-item-object-custom menu-item-3674\"><a href=\"#\" data-ps2id-api=\"true\" class=\"__mPS2id\">Omgevingswerken</a></li>"
+    },
+    {
+      "href": "https://4bestbenew.newsoftdemo.info/bodemsanering/",
+      "label": "Bodemsanering"
+    },
+    {
+      "href": "https://4bestbenew.newsoftdemo.info/rioleringswerken/",
+      "label": "Rioleringswerken"
+    },
+    {
+      "href": "https://4bestbenew.newsoftdemo.info/over-ons/",
+      "label": "Over 4Best"
+    },
+    {
+      "href": "https://4bestbenew.newsoftdemo.info/vacatures/",
+      "label": "Vacatures"
+    },
+    {
+      "href": "https://4bestbenew.newsoftdemo.info/contact/",
+      "label": "Contact"
+    },
+    {
+      "href": "#",
+      "label": "Privacy policy",
+      "fullHTML": "<a href=\"#\">Privacy policy</a>",
+      "parentHTML": "<li><a href=\"#\">Privacy policy</a></li>"
+    },
+    {
+      "href": "#",
+      "label": "Disclaimer",
+      "fullHTML": "<a href=\"#\">Disclaimer</a>",
+      "parentHTML": "<li><a href=\"#\">Disclaimer</a></li>"
+    },
+    {
+      "href": "https://wpml.org",
+      "label": "wpml.org"
+    }
+  ]
+}

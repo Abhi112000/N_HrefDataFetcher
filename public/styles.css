@@ -1,0 +1,96 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    padding: 20px;
+}
+/* Main application container */
+#app {
+    max-width: 1500px; /* Increased width */
+    margin: auto;
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+/* Form styling */
+form {
+    margin-bottom: 20px;
+}
+input[type="text"] {
+    width: calc(100% - 140px); /* Adjusted width to fit the button container */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+.button-container {
+    display: inline-block;
+    margin-left: 10px;
+}
+button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    margin-right: 10px;
+}
+button:hover {
+    background-color: #0056b3;
+}
+/* Loader styling */
+#loader {
+    display: none;
+    font-weight: bold;
+    color: blue;
+    margin-top: 10px;
+}
+/* Data container for left-right layout */
+.data-container {
+    display:flex;
+    justify-content: space-between;
+    gap: 20px; /* Add space between the boxes */
+}
+/* Data boxes styling */
+.data-box {
+    flex: 1;
+    min-width: 45%; /* Ensure both boxes have a good size */
+    max-height: 700px; /* Max height for the scrollable box */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: #f9f9f9;
+    overflow: auto; /* Scroll if content overflows */
+}
+/* Preformatted text styling */
+pre {
+    white-space: pre-wrap; /* Allows wrapping of long text */
+    word-wrap: break-word; /* Breaks long words */
+    font-family: monospace; /* Uses a monospace font */
+    background: #e9ecef;
+    padding: 15px;
+    border-radius: 5px;
+    overflow: auto; /* Adds scroll if needed */
+}
+h1, h2 {
+    margin-bottom: 10px;
+}
+h1 {
+    font-size: 24px;
+}
+h2 {
+    font-size: 20px;
+}
+/* Adjust margin between buttons */
+.button-container button {
+    margin-left: -8px;
+    margin-right: 10px;
+    margin-top: 5px;
+}

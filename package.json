@@ -1,0 +1,21 @@
+{
+  "name": "fetch-href-tool",
+  "version": "1.0.0",
+  "description": "A web tool to fetch href links from websites using Puppeteer.",
+  "main": "src/server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.21.1",
+    "fs": "^0.0.1-security",
+    "path": "^0.12.7",
+    "puppeteer": "^23.5.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}
