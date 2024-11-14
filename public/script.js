@@ -89,6 +89,12 @@
 //     }
 // });
 
+
+
+
+
+
+
 // // Function to fetch the saved URL and dead link data
 // async function fetchUrlData() {
 //     try {
@@ -134,41 +140,60 @@
 
 
 
+  
 
-document.getElementById('urlForm').addEventListener('submit', async (event) => {
+
+
+
+ // Attach event listener to the form submit event
+document.getElementById('urlForm').addEventListener('submit', function(event) {
     event.preventDefault(); // Prevent default form submission
-    const url = document.getElementById('urlInput').value; // Get the URL input
-    const urlDataElement = document.getElementById('urlData');
-    const deadLinkDataElement = document.getElementById('deadLinkData');
-    const loader = document.getElementById('loader');
+    fetchUrlData(); // Call fetchUrlData when form is submitted
+});
 
-    urlDataElement.textContent = 'Loading...';
-    deadLinkDataElement.textContent = 'Loading...';
-    loader.style.display = 'block'; // Show loader
-
+// Ensure loader works for fetchUrlData on form submit
+async function fetchUrlData() {
     try {
-        const response = await fetch('/fetch-href-data', {
+        toggleLoader(true); // Show loader when starting the fetch
+        const urlInput = document.getElementById('urlInput').value; // Get the URL from input
+
+        // Perform fetch with the provided URL
+        const response = await fetch('/fetch-url-data', {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json',
+                'Content-Type': 'application/json'
             },
-            body: JSON.stringify({ url })
+            body: JSON.stringify({ url: urlInput }) // Send URL in the request body
         });
 
         if (response.ok) {
-            console.log('Data fetched successfully from server');
-            await fetchUrlData(); // Fetch and update frontend with new data
+            const data = await response.json();
+            console.log('Data fetched from server:', data);
+
+            // Display the data in the specified blocks
+            if (data.urlData) {
+                document.getElementById('urlData').textContent = JSON.stringify(data.urlData.anchorData, null, 2);
+            } else {
+                document.getElementById('urlData').textContent = 'No URL and Label data available.';
+            }
+
+            if (data.deadLinkData) {
+                document.getElementById('deadLinkData').textContent = JSON.stringify(data.deadLinkData.invalidHref, null, 2);
+            } else {
+                document.getElementById('deadLinkData').textContent = 'No dead link data available.';
+            }
         } else {
-            const errorData = await response.json();
-            console.error('Error fetching href data:', errorData);
-            urlDataElement.textContent = `Error fetching data: ${errorData.message}`;
-            deadLinkDataElement.textContent = `Error fetching data: ${errorData.message}`;
+            console.error('Error fetching URL data:', response.statusText);
         }
     } catch (error) {
-        console.error('Error submitting URL:', error);
-        urlDataElement.textContent = 'Error submitting URL.';
-        deadLinkDataElement.textContent = 'Error submitting URL.';
+        console.error('Error fetching URL data:', error);
     } finally {
-        loader.style.display = 'none'; // Hide loader
+        toggleLoader(false); // Hide loader when fetch is complete
     }
-});
+}
+
+// Example loader toggle function
+function toggleLoader(show) {
+    const loader = document.getElementById('loader');
+    loader.style.display = show ? 'block' : 'none';
+}

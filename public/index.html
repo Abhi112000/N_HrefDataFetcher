@@ -215,36 +215,36 @@
 
 
 
+ 
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <title>Href Data Fetcher</title>
+    <title>URL Data Fetcher</title>
 </head>
 <body>
-    <div id="app">
-        <h1>Href Data Fetcher</h1>
-        <form id="urlForm">
-            <input type="text" id="urlInput" placeholder="Enter URL" required>
-            <div class="button-container">
-                <button type="submit">Fetch Data</button>
-                <button type="button" id="clearDataBtn">Clear Data</button>
-            </div>
-        </form>
-        <div id="loader" style="display: none;">Loading...</div>
-        <div class="data-container">
-            <div id="urlDataBox" class="data-box">
-                <h2>URL and Label Data</h2>
-                <pre id="urlData">No data fetched yet.</pre>
-            </div>
-            <div id="deadLinkDataBox" class="data-box">
-                <h2>Dead Links Data</h2>
-                <pre id="deadLinkData">No data fetched yet.</pre>
-            </div>
-        </div>
+    <h1>URL Data Fetcher</h1>
+    <form id="urlForm">
+        <label for="urlInput">Enter URL:</label>
+        <input type="text" id="urlInput" required />
+        <button type="submit">Fetch Data</button>
+    </form>
+
+    <!-- Loader -->
+    <div id="loader" style="display: none;">Loading...</div>
+
+    <!-- Blocks to display the data -->
+    <div id="urlData">
+        <h3>URL and Labels</h3>
+        <pre></pre> <!-- Data will be inserted here -->
     </div>
+    
+    <div id="deadLinkData">
+        <h3>Dead Links</h3>
+        <pre></pre> <!-- Data will be inserted here -->
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>

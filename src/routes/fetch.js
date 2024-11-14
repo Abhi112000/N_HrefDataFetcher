@@ -231,8 +231,8 @@
 //                 return {
 //                     href,
 //                     label,
-//                     fullHTML,
-//                     parentHTML,
+//                     // fullHTML,
+//                     // parentHTML,
 //                     isValid: true
 //                 };
 //             } else {
@@ -319,119 +319,119 @@
 
 
 
-// routes/fetch.js
+
+
+
+
+
+
+
+
+
+
+
+
+
 import puppeteer from 'puppeteer';
 import fs from 'fs/promises';
 import path from 'path';
 import sleep from '../../utilities/sleep.js';
 
-export async function fetchHrefData(url) {
-    const folderPathDeletion = "C:/Users/admin/Desktop/Project Href/extractedURLFile";
+// Path to the folder where the data is saved
+const folderPath = path.join(process.cwd(), 'extractedURLFile');
 
-    // Delete all files in the folder before proceeding
+// Helper function to delete all files in the folder
+async function deleteFilesInFolder(folderPath) {
     try {
-        const files = await fs.readdir(folderPathDeletion); // Get list of files
+        const files = await fs.readdir(folderPath); // Get list of files
         if (files.length > 0) {
             console.log('Files found, proceeding with deletion:', files);
             for (const file of files) {
-                await fs.unlink(path.join(folderPathDeletion, file)); // Delete each file
+                await fs.unlink(path.join(folderPath, file)); // Delete each file
             }
             console.log('All files deleted from the extractedURLFile folder');
         } else {
-            console.log('No files found in the extractedURLFile folder, continuing execution...');
+            console.log('No files found in the extractedURLFile folder.');
         }
     } catch (err) {
         console.error('Error accessing or deleting files:', err);
     }
+}
 
-    // Launch a browser instance
-    const browser = await puppeteer.launch({
-        headless: true, // You probably want to keep this headless
-        args: ['--no-sandbox', '--disable-setuid-sandbox'] // Prevent sandboxing for smooth running in server environments
-    });
+// Function to fetch href data from a given URL
+export async function fetchHrefData(url) {
+    try {
+        // Step 1: Delete previous data
+        await deleteFilesInFolder(folderPath);
 
-    // Open a new page
-    const page = await browser.newPage();
-
-    // Navigate to a webpage and wait until the page is fully loaded
-    await page.goto(url, { waitUntil: 'load' });
-
-    await sleep(5000); // Add some delay if necessary
-
-    // Get the URL of the current page
-    const currentPageURL = page.url();
-    console.log(`Current Page URL: ${currentPageURL}`);
-
-    // Fetch all anchor tags and their href + label using page.evaluate
-    const anchorData = await page.evaluate(() => {
-        const anchors = Array.from(document.querySelectorAll('a'));
-
-        return anchors.map(anchor => {
-            const href = anchor.getAttribute('href');
-            const label = anchor.textContent.trim();
-            const fullHTML = anchor.outerHTML; // Full HTML of the anchor tag
-            const parentHTML = anchor.parentElement.outerHTML; // Full HTML of the parent element
-
-            // Classify anchors: valid vs. dead link
-            return {
-                href: href || 'No href found',
-                label,
-                fullHTML,
-                parentHTML,
-                isValid: href && href !== '#' && href !== '' && !href.startsWith('javascript:')
-            };
+        // Step 2: Launch Puppeteer and fetch anchor data
+        const browser = await puppeteer.launch({
+            headless: true,
+            args: ['--no-sandbox', '--disable-setuid-sandbox']
         });
-    });
 
-    // Separate valid and dead links
-    const validHrefAnchors = anchorData.filter(anchor => anchor.isValid);
-    const deadLinks = anchorData.filter(anchor => !anchor.isValid);
+        const page = await browser.newPage();
+        await page.goto(url, { waitUntil: 'load' });
+        await sleep(5000); // Wait for content to load
 
-    // Prepare the data to save for valid hrefs
-    const validDataToSave = {
-        pageURL: currentPageURL,
-        URLcounts: `Total number of valid hrefs: ${validHrefAnchors.length}`,
-        anchorData: validHrefAnchors
-    };
+        const currentPageURL = page.url();
+        console.log(`Current Page URL: ${currentPageURL}`);
 
-    // Ensure the directory exists
-    const folderPath = path.join(process.cwd(), 'extractedURLFile');
-    try {
-        await fs.mkdir(folderPath, { recursive: true });
-    } catch (err) {
-        console.error('Error creating directory:', err);
-    }
+        const anchorData = await page.evaluate(() => {
+            const anchors = Array.from(document.querySelectorAll('a'));
 
-    // Write valid hrefs to URL_and_Label_pro.json
-    const validFilePath = path.join(folderPath, 'URL_and_Label_pro.json');
-    try {
-        await fs.writeFile(validFilePath, JSON.stringify(validDataToSave, null, 2));
-        console.log('The valid anchor data and page URL have been saved.');
-    } catch (err) {
-        console.error('Error writing to file', err);
-    }
+            return anchors.map(anchor => {
+                const href = anchor.getAttribute('href');
+                const label = anchor.textContent.trim();
+                const fullHTML = anchor.outerHTML;
+                const parentHTML = anchor.parentElement.outerHTML;
 
-    // Write dead links to DeadLink_pro.json
-    if (deadLinks.length > 0) {
-        console.log('Found some dead links');
+                // Classify anchors into valid and dead links
+                if (href && href !== '#' && href !== '' && !href.startsWith('javascript:')) {
+                    return { href, label, isValid: true };
+                } else {
+                    return { href: href || 'No href found', label, fullHTML, parentHTML, isValid: false };
+                }
+            });
+        });
 
-        const deadAnchorData = {
-            currentPageURL: currentPageURL,
-            deadAnchorCounts: `Total number of dead links: ${deadLinks.length}`,
-            invalidHref: deadLinks
+        // Step 3: Filter valid href links
+        const validHrefAnchors = anchorData.filter(anchor => anchor.href);
+
+        // Prepare data to be saved
+        const dataToSave = {
+            pageURL: currentPageURL,
+            URLcounts: `Total number of hrefs: ${validHrefAnchors.length}`,
+            anchorData: validHrefAnchors
         };
 
-        const deadFilePath = path.join(folderPath, 'DeadLink_pro.json');
-        try {
-            await fs.writeFile(deadFilePath, JSON.stringify(deadAnchorData, null, 2));
-            console.log('The dead link data has been saved.');
-        } catch (err) {
-            console.error('Error writing dead links to file', err);
-        }
-    } else {
-        console.log('No dead links found');
-    }
+        // Ensure directory exists for saving data
+        await fs.mkdir(folderPath, { recursive: true });
 
-    // Close the browser
-    await browser.close();
+        const filePath = path.join(folderPath, 'URL_and_Label_pro.json');
+        await fs.writeFile(filePath, JSON.stringify(dataToSave, null, 2));
+        console.log('The anchor data and page URL have been saved.');
+
+        // Step 4: Handle dead links (href="#")
+        const deadLinks = anchorData.filter(anchor => anchor.href === '#');
+        if (deadLinks.length > 0) {
+            const deadAnchorCounts = `Total number of dead links: ${deadLinks.length}`;
+            const deadAnchorData = {
+                currentPageURL: currentPageURL,
+                deadAnchorCounts,
+                invalidHref: deadLinks
+            };
+
+            const deadFilePath = path.join(folderPath, 'DeadLink_pro.json');
+            await fs.writeFile(deadFilePath, JSON.stringify(deadAnchorData, null, 2));
+            console.log('Dead link data saved.');
+        } else {
+            console.log('No dead links found.');
+        }
+
+        // Close the browser after extraction
+        await browser.close();
+    } catch (error) {
+        console.error('Error during href data fetch:', error);
+    }
 }
